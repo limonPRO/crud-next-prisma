@@ -7,7 +7,7 @@ type Data = {
   title: string
 }
 
-export default async function handler(req: NextApiRequest,res: NextApiResponse<Data>) {
-    const posts =await prisma.post.findMany()
-  res.status(200).json(posts)
+export default async function handler(req: NextApiRequest,res: NextApiResponse<Data[]>) {
+    const post =await prisma.post.findMany()
+  res.status(200).json(post)
 }
