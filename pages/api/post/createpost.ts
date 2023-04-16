@@ -9,9 +9,9 @@ type Data = {
 
 export default async function handler(req: NextApiRequest,res: NextApiResponse<Data>) {
   if(req.method=="POST"){
-    // const {title}=req.body
+    const {title}=req.body
     const post =await prisma.post.create({ 
-      data: { title: "title"}
+      data: { title: title }
     })
   res.status(200).json(post)
 }
